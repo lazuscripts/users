@@ -12,6 +12,7 @@
        {"name", types.varchar unique: true}
        {"salt", types.text}
        {"digest", types.text}
+       {"admin", types.boolean default: false}
    }
    ```
 
