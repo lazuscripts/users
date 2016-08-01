@@ -5,7 +5,7 @@
 2. Inside your application: `@include "users/users"`
 
 3. In migrations, do the following:
-   ```
+   ```moonscript
    import create_table, types from require "lapis.db.schema"
    create_table "users", {
        {"id", types.serial primary_key: true}
