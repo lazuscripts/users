@@ -27,13 +27,15 @@ class extends lapis.Application
                     enctype: "multipart/form-data"
                     class: "pure-form"
                 }, ->
-                    p "Username: "
-                    input type: "text", name: "name"
-                    p "Password: "
-                    input type: "password", name: "password"
-                    br!
                     input type: "hidden", name: "csrf_token", value: csrf_token
-                    input type: "submit"
+                    p ->
+                        text "Username: "
+                        input type: "text", name: "name"
+                    p ->
+                        text "Password: "
+                        input type: "password", name: "password"
+                    p ->
+                        input class: "pure-button", type: "submit"
 
         POST: =>
             csrf.assert_token @
@@ -73,9 +75,12 @@ class extends lapis.Application
                     enctype: "multipart/form-data"
                     class: "pure-form"
                 }, ->
-                    text "Change username? "
-                    input type: "text", name: "name", placeholder: user.name
                     input type: "hidden", name: "csrf_token", value: csrf_token
+                    p ->
+                        text "Change username? "
+                        input type: "text", name: "name", placeholder: user.name
+                    p ->
+                        input class: "pure-button", type: "submit"
                 hr!
 
                 form {
@@ -84,14 +89,16 @@ class extends lapis.Application
                     enctype: "multipart/form-data"
                     class: "pure-form"
                 }, ->
-                    p "Change password?"
-                    text "Old password: "
-                    input type: "password", name: "oldpassword"
-                    br!
-                    text "New password: "
-                    input type: "password", name: "password"
                     input type: "hidden", name: "csrf_token", value: csrf_token
-                    input type: "submit"
+                    p "Change password?"
+                    p ->
+                        text "Old password: "
+                        input type: "password", name: "oldpassword"
+                    p ->
+                        text "New password: "
+                        input type: "password", name: "password"
+                    p ->
+                        input class: "pure-button", type: "submit"
                 hr!
 
                 form {
@@ -101,10 +108,11 @@ class extends lapis.Application
                     class: "pure-form"
                     onsubmit: "return confirm('Are you sure you want to do this?');"
                 }, ->
-                    text "Delete user? "
-                    input type: "checkbox", name: "delete"
                     input type: "hidden", name: "csrf_token", value: csrf_token
-                    input type: "submit"
+                    p ->
+                        input class: "pure-checkbox", type: "checkbox", name: "delete"
+                        text "Delete user?"
+                    input class: "pure-button", type: "submit"
 
         POST: =>
             csrf.assert_token @
@@ -150,14 +158,15 @@ class extends lapis.Application
                     enctype: "multipart/form-data"
                     class: "pure-form"
                 }, ->
-                    text "Username: "
-                    input type: "text", name: "name"
-                    br!
-                    text "Password: "
-                    input type: "password", name: "password"
-                    br!
                     input type: "hidden", name: "csrf_token", value: csrf_token
-                    input type: "submit"
+                    p ->
+                        text "Username: "
+                        input type: "text", name: "name"
+                    p ->
+                        text "Password: "
+                        input type: "password", name: "password"
+                    p ->
+                        input class: "pure-button", type: "submit"
 
         POST: =>
             csrf.assert_token @
