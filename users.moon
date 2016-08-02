@@ -25,6 +25,7 @@ class extends lapis.Application
                     action: @url_for "user_new"
                     method: "POST"
                     enctype: "multipart/form-data"
+                    class: "pure-form"
                 }, ->
                     p "Username: "
                     input type: "text", name: "name"
@@ -70,6 +71,7 @@ class extends lapis.Application
                     action: @url_for "user_edit"
                     method: "POST"
                     enctype: "multipart/form-data"
+                    class: "pure-form"
                 }, ->
                     text "Change username? "
                     input type: "text", name: "name", placeholder: user.name
@@ -80,6 +82,7 @@ class extends lapis.Application
                     action: @url_for "user_edit"
                     method: "POST"
                     enctype: "multipart/form-data"
+                    class: "pure-form"
                 }, ->
                     p "Change password?"
                     text "Old password: "
@@ -95,6 +98,7 @@ class extends lapis.Application
                     action: @url_for "user_edit"
                     method: "POST"
                     enctype: "multipart/form-data"
+                    class: "pure-form"
                     onsubmit: "return confirm('Are you sure you want to do this?');"
                 }, ->
                     text "Delete user? "
@@ -144,6 +148,7 @@ class extends lapis.Application
                     action: @url_for "user_login"
                     method: "POST"
                     enctype: "multipart/form-data"
+                    class: "pure-form"
                 }, ->
                     text "Username: "
                     input type: "text", name: "name"
