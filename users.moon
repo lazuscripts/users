@@ -331,4 +331,5 @@ class extends lapis.Application
     @session.id = nil
     @session.redirect = nil
     Sessions\close(@session)
+    @session.info = "You have been logged out."
     return redirect_to: @params.redirect or @url_for "index"
