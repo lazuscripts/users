@@ -62,5 +62,6 @@ import create_table, types, add_column, rename_column, create_index, drop_index 
     -- settings["users.recaptcha-secret"] = nil  -- provided by admin panel
     settings.save!
 
-  -- NOTE may need to run a migration to allow null emails ?
+  [1526102192]: =>
+    db.query "ALTER TABLE users ALTER COLUMN email DROP NOT NULL" -- allow NULL emails
 }
